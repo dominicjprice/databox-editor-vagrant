@@ -1,0 +1,13 @@
+{
+	"recaptcha": {
+		"publicKey": "6Lcf0ycTAAAAAGv_4LZcdrFxb3XOAHecmz5e5EvO",
+		"privateKey": "6Lcf0ycTAAAAAFrbr8NRNNMOkFjmZLwe-xEliuju"
+	},
+	"mongodb": {
+		"host": "databox-app-server-mongodb",
+		"port": "27017",
+		"user": "user",
+		"pass": "pass",
+		"db": "databox-app-server"
+	}
+}
