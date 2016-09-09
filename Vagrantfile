@@ -8,7 +8,7 @@ CONSTANTS = {
     "databox_application_server" => {
         "name" => "databox-app-server",
         "mongodb" => {
-            "name" => "databox-app-server-mongodb",
+            "host" => "databox-app-server-mongodb",
             "port" => "27017",
             "user" => "user",
             "pass" => "pass",
@@ -65,7 +65,7 @@ EOM
         
         d.run "tutum/mongodb",
                 auto_assign_name: false,
-                args: "--name #{conf["mongodb"]["name"]} \
+                args: "--name #{conf["mongodb"]["host"]} \
                         -e MONGODB_USER=\"#{conf["mongodb"]["user"]}\" \
                         -e MONGODB_PASS=\"#{conf["mongodb"]["pass"]}\" \
                         -e MONGODB_DATABASE=\"#{conf["mongodb"]["db"]}\""
@@ -75,7 +75,7 @@ EOM
         d.run conf["name"],
                 auto_assign_name: false,
                 args: "--name #{conf["name"]} -e PORT=80 \
-                        --link #{conf["mongodb"]["name"]}:#{conf["mongodb"]["name"]}"
+                        --link #{conf["mongodb"]["host"]}:#{conf["mongodb"]["host"]}"
                         
     end
     
